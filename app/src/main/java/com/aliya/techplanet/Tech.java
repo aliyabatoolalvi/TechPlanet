@@ -1,7 +1,7 @@
 package com.aliya.techplanet;
 
 public class Tech {
-
+    int  img;
     int id;
     //for radio buttons
     String laptop;
@@ -11,7 +11,7 @@ public class Tech {
     String specs;
     int price;
 
-    public Tech(int id, String laptop, String tablet, String mobile, String name, String specs, int price) {
+    public Tech(int id,int img, String laptop, String tablet, String mobile, String name, String specs, int price) {
         this.id = id;
         this.laptop = laptop;
         this.tablet = tablet;
@@ -19,6 +19,7 @@ public class Tech {
         this.name = name;
         this.specs = specs;
         this.price = price;
+        this.img=img;
     }
 
     public int getId() {
@@ -28,7 +29,12 @@ public class Tech {
     public void setId(int id) {
         this.id = id;
     }
-
+    public void setImg(int img) {
+        this.img=img;
+    }
+    public int getImg() {
+        return img;
+    }
     public String getLaptop() {
         return laptop;
     }
