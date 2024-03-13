@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tech Planet</string>
+    <string name="name_of_device">Enter name</string>
+    <string name="type">Enter type of device:</string>
+    <string name="enter_specifications">Enter specs</string>
+    <string name="insert_details">Insert Details</string>
+    <string name="desired_price">Desired Price: (in pkr)</string>
+</resources>
