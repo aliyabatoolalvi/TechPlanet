@@ -14,10 +14,11 @@ import androidx.core.view.WindowInsetsCompat;
 import com.aliya.techplanet.databinding.ActivityAddEditTechBinding;
 import com.google.gson.Gson;
 
+import java.util.Objects;
+
 
 public class AddEditTechActivity extends AppCompatActivity {
 
-    // Inflate the layout using the generated binding class
 
     Tech tech = new Tech();
 
@@ -33,17 +34,17 @@ public class AddEditTechActivity extends AppCompatActivity {
 
         ActivityAddEditTechBinding binding = ActivityAddEditTechBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+//
 //        setContentView(R.layout.activity_add_edit_tech);
-
-        if (getIntent().hasExtra("data")) {
-            tech = new Gson().fromJson(getIntent().getStringExtra("data"), Tech.class);
-            binding.price.setText(tech.getPrice());
-            binding.specs.setText(tech.getSpecs());
-
-
-        }
+//
+//        if (getIntent().hasExtra("data")) {
+//            tech = new Gson().fromJson(getIntent().getStringExtra("data"), Tech.class);
+//            binding.price.setText(tech.getPrice());
+//            binding.specs.setText(tech.getSpecs());
+//            binding.typeradio.setText(tech.getType());
+//
+//        }
 
 
 

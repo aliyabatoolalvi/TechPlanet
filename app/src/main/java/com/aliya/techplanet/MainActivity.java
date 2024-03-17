@@ -8,13 +8,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    TechAdaptor adapter;
     RecyclerView recyclerView;
 
     List<Tech> techList;
@@ -27,25 +28,35 @@ public class MainActivity extends AppCompatActivity {
 
             techList=gettechList();
             recyclerView = findViewById(R.id.recyclerView);
+            adapter=new TechAdaptor(this,techList);
+            recyclerView=findViewById(R.id.recyclerView);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-            findViewById(R.id.add).setOnClickListener(v->{
+            recyclerView.setAdapter(adapter);
+
+        findViewById(R.id.add).setOnClickListener(v->{
             startActivity(new Intent(this,AddEditTechActivity.class));
         });
+
+
 
     }
     private List<Tech> gettechList(){
         List<Tech> techs= new ArrayList<Tech>();
         Tech t1=new Tech(
-                1,R.drawable.baseline_laptop_24,"Laptop",null,null,"Lenovo y33","64GB RAM, Quad Core, intel i9",349999
+                1,R.drawable.baseline_laptop_24,"Laptop","Lenovo y33","64GB RAM, Quad Core, intel i9",349999
         );
         techs.add(t1);
+
         t1=new Tech(
-                2,R.drawable.baseline_laptop_24,"Laptop",null,null,"Lenovo y23","32GB RAM, Quad Core, intel i7",249999
+                2,R.drawable.baseline_laptop_24,"Laptop","Lenovo y23","32GB RAM, Quad Core, intel i7",249999
         );
+
         t1=new Tech(
-                3,R.drawable.baseline_tablet_android_24,null,"Tablet",null,"Samsung z11","12GB RAM, Quad Core, Touch pen",24999
+                3,R.drawable.baseline_tablet_android_24,"Tablet","Samsung z11","12GB RAM, Quad Core, Touch pen",24999
         );
         techs.add(t1);
+
         return techs;
     }
 

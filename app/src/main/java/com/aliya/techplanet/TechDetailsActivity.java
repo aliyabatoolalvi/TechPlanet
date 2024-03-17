@@ -7,19 +7,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.aliya.techplanet.databinding.ActivityTechDetailsBinding;
+
+import com.google.gson.Gson;
+
+import java.util.Objects;
 
 public class TechDetailsActivity extends AppCompatActivity {
-
+    Tech tech;
+    ActivityTechDetailsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_tech_details);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        binding = ActivityTechDetailsBinding.inflate(getLayoutInflater());
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
+        tech=new Gson().fromJson(getIntent().getStringExtra("data"),Tech.class);
+
+        binding.name.setText(tech.getName());
+        binding.type.setText(tech.getType());
+        binding.specs.setText(tech.getSpecs());
+        binding.price.setText(tech.getPrice());
 
     }
 }

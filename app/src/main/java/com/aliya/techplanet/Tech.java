@@ -3,27 +3,35 @@ package com.aliya.techplanet;
 public class Tech {
     int  img;
     int id;
+
     //for radio buttons
+    String type;
     String laptop;
     String tablet;
     String mobile;
     String name;
     String specs;
     int price;
-    public Tech(){
-
-    }
-    public Tech(int id,int img, String laptop, String tablet, String mobile, String name, String specs, int price) {
+    public Tech(){ }
+//    public Tech(int id,int img, String laptop, String tablet, String mobile, String name, String specs, int price) {
+//        this.id = id;
+//        this.laptop = laptop;
+//        this.tablet = tablet;
+//        this.mobile = mobile;
+//        this.name = name;
+//        this.specs = specs;
+//        this.price = price;
+//        this.img=img;
+//    }
+    public Tech(int id,int img, String type, String name, String specs, int price) {
         this.id = id;
-        this.laptop = laptop;
-        this.tablet = tablet;
-        this.mobile = mobile;
+
+        this.type = type;
         this.name = name;
         this.specs = specs;
         this.price = price;
         this.img=img;
     }
-
     public int getId() {
         return id;
     }
@@ -41,6 +49,13 @@ public class Tech {
         return laptop;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
     public void setLaptop(String laptop) {
         this.laptop = laptop;
     }
@@ -84,4 +99,6 @@ public class Tech {
     public void setPrice(int price) {
         this.price = price;
     }
+
+
 }
