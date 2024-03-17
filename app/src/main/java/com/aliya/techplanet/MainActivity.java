@@ -1,5 +1,6 @@
 package com.aliya.techplanet;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
             techList=gettechList();
             recyclerView = findViewById(R.id.recyclerView);
 
+            findViewById(R.id.add).setOnClickListener(v->{
+            startActivity(new Intent(this,AddEditTechActivity.class));
+        });
 
     }
     private List<Tech> gettechList(){

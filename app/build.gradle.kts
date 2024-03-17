@@ -6,6 +6,10 @@ android {
     namespace = "com.aliya.techplanet"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding=true
+    }
+
     defaultConfig {
         applicationId = "com.aliya.techplanet"
         minSdk = 21
@@ -40,5 +44,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
     implementation("com.google.code.gson:gson:2.10.1")
 }

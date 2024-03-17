@@ -10,7 +10,9 @@ public class Tech {
     String name;
     String specs;
     int price;
+    public Tech(){
 
+    }
     public Tech(int id,int img, String laptop, String tablet, String mobile, String name, String specs, int price) {
         this.id = id;
         this.laptop = laptop;
