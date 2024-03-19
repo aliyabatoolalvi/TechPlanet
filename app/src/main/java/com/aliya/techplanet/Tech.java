@@ -6,20 +6,12 @@ public class Tech implements Serializable {
     int  img;
     int id;
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    boolean is_sold=false;
 
     String status="In Stock";
     //for radio buttons
     String type;
-//    String laptop;
-//    String tablet;
-//    String mobile;
+
     String name;
     String specs;
     int price;
@@ -57,6 +49,13 @@ public class Tech implements Serializable {
 //    public String getLaptop() {
 //        return laptop;
 //    }
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+            this.status = status;
+        }
 
     public String getType() {
         return type;

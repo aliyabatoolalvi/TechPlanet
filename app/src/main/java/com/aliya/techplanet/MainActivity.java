@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         t1=new Tech(
                 2,R.drawable.baseline_laptop_24,"Laptop","Lenovo y23","32GB RAM, Quad Core, intel i7",249999
         );
-
+        techs.add(t1);
         t1=new Tech(
                 3,R.drawable.baseline_tablet_android_24,"Tablet","Samsung z11","12GB RAM, Quad Core, Touch pen",24999
         );

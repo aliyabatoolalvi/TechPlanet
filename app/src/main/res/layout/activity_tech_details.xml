@@ -6,82 +6,100 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TechDetailsActivity"
-    android:background="#FFF9C4"
+    android:background="@color/base"
     >
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="33dp">
-
+        android:orientation="vertical"
+        >
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="192dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="148dp"
             android:text="Name of tech"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.262"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="25sp"
             android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginBottom="52dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/playfair"
+            android:background="@color/button"
+            android:textAlignment="center"
 
             />
 
         <TextView
             android:id="@+id/type"
-            android:layout_width="54dp"
+            android:layout_width="match_parent"
             android:layout_height="24dp"
-            android:layout_marginTop="196dp"
             android:text="Type"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
-            app:layout_constraintStart_toEndOf="@+id/name"
-            app:layout_constraintTop_toTopOf="parent"
             android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginBottom="52dp"
+            android:fontFamily="@font/playfair"
+
             />
 
         <TextView
             android:id="@+id/specs"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="34dp"
+            android:background="#4AAD88C6"
+            android:fontFamily="@font/playfair"
+            android:padding="10dp"
+            android:singleLine="false"
+            android:text="Specs"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+
+            />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="52dp"
-            android:text="Specs"
-            app:layout_constraintBottom_toTopOf="@+id/price"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-             android:textSize="25sp"
-            android:textColor="@color/black"
-        />
-
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center"
+            >
         <TextView
             android:id="@+id/price"
-            android:layout_width="wrap_content"
+            android:layout_width="143dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="312dp"
-            android:text="350,000 pkr"
+            android:fontFamily="@font/playfair"
+            android:text="350,000"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textAlignment="textEnd"
+            android:layout_marginEnd="10dp"
 
+            />
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="143dp"            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/playfair"
+
+            />
+</LinearLayout>
         <TextView
             android:id="@+id/status"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-            android:text="Sold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/price"
+            android:text="In Stock"
+            android:textColor="#4CAF50"
             android:textSize="25sp"
-            android:textColor="#FD0000"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginBottom="52dp"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            android:fontFamily="@font/playfair"
             />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

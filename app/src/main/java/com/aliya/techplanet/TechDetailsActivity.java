@@ -1,6 +1,7 @@
 package com.aliya.techplanet;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,13 +21,14 @@ public class TechDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-
+        // setting binding as contentView .. getRoot() = it will take top level layout of that given activity_add_edit_tech.xml
         binding = ActivityTechDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding = ActivityTechDetailsBinding.inflate(getLayoutInflater());
+        // enabling back button
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
+        // put tech object from "data" intent and display
         tech=new Gson().fromJson(getIntent().getStringExtra("data"),Tech.class);
 
         binding.name.setText(tech.getName());
@@ -34,5 +36,16 @@ public class TechDetailsActivity extends AppCompatActivity {
         binding.specs.setText(tech.getSpecs());
         binding.price.setText(String.valueOf(tech.getPrice()));
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // Handle the Up button click here (e.g., navigate back or perform some action)
+                finish(); // Close the current activity
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
