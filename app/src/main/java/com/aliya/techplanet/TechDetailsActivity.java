@@ -20,7 +20,9 @@ public class TechDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_tech_details);
+
+        binding = ActivityTechDetailsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         binding = ActivityTechDetailsBinding.inflate(getLayoutInflater());
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
@@ -30,7 +32,7 @@ public class TechDetailsActivity extends AppCompatActivity {
         binding.name.setText(tech.getName());
         binding.type.setText(tech.getType());
         binding.specs.setText(tech.getSpecs());
-        binding.price.setText(tech.getPrice());
+        binding.price.setText(String.valueOf(tech.getPrice()));
 
     }
 }

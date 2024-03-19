@@ -31,18 +31,20 @@ public class TechAdaptor extends RecyclerView.Adapter<TechViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull TechViewHolder holder, int position) {
         Tech blog=techList.get(position);
-        holder.sid.setText(blog.getId());
+        holder.sid.setText(String.valueOf(blog.getId()));
         holder.name.setText(blog.getName());
         holder.icon.setImageResource(blog.getImg());
+        holder.status.setText(blog.getStatus());
         holder.item.setOnClickListener(v -> {
             Intent intent=new Intent(context,TechDetailsActivity.class);
-            intent.putExtra("data",new Gson().toJson(techList));
+            intent.putExtra("data",new Gson().toJson(blog));
             context.startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
-       return techList.size();
+        return Math.min(4, techList.size());
+
     }
 }

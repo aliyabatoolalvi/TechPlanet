@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddEditTechActivity"
-    android:background="#FFF9C4">
+    android:background="#B3E5FC">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/insert_details"
-        android:textColor="@color/black"
+        android:textColor="#ED0000"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
