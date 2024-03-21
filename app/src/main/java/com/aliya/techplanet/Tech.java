@@ -1,20 +1,25 @@
 package com.aliya.techplanet;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
-
+@Entity
 public class Tech implements Serializable {
+
+    String soldat;
     int  img;
+    @PrimaryKey(autoGenerate = true)
     int id;
-
     boolean is_sold=false;
-
     String status="In Stock";
     //for radio buttons
     String type;
-
     String name;
     String specs;
     int price;
+
+
     public Tech(){ }
 //    public Tech(int id,int img, String laptop, String tablet, String mobile, String name, String specs, int price) {
 //        this.id = id;
@@ -40,6 +45,7 @@ public class Tech implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
     public void setImg(int img) {
         this.img=img;
     }
@@ -84,7 +90,21 @@ public class Tech implements Serializable {
 //    public void setMobile(String mobile) {
 //        this.mobile = mobile;
 //    }
+public String getSoldat() {
+    return soldat;
+}
 
+    public void setSoldat(String soldat) {
+        this.soldat = soldat;
+    }
+
+    public boolean isIs_sold() {
+        return is_sold;
+    }
+
+    public void setIs_sold(boolean is_sold) {
+        this.is_sold = is_sold;
+    }
     public String getName() {
         return name;
     }

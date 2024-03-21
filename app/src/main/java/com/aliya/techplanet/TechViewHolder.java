@@ -9,15 +9,19 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
+import java.util.Objects;
+
 
 public class TechViewHolder extends RecyclerView.ViewHolder {
     ImageView icon;
     TextView name,sid,status;
-
+    Tech tech = new Tech();
     CardView item;
 
     public TechViewHolder(@NonNull View techView){
         super(techView);
+
+
         icon= techView.findViewById(R.id.icon);
         name= techView.findViewById(R.id.name);
         sid= techView.findViewById(R.id.sid);

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 
 import java.util.List;
+import java.util.Objects;
 
 public class TechAdaptor extends RecyclerView.Adapter<TechViewHolder> {
     Context context;
@@ -33,8 +34,22 @@ public class TechAdaptor extends RecyclerView.Adapter<TechViewHolder> {
         Tech blog=techList.get(position);
         holder.sid.setText(String.valueOf(blog.getId()));
         holder.name.setText(blog.getName());
-        holder.icon.setImageResource(blog.getImg());
+//        holder.icon.setImageResource(blog.getImg());
         holder.status.setText(blog.getStatus());
+
+        if(Objects.equals(blog.type, "Laptop")) {
+
+            holder.icon.setImageResource(R.drawable.baseline_laptop_24);
+        } else if(Objects.equals(blog.type, "Tablet")) {
+            holder.icon.setImageResource(R.drawable.baseline_tablet_android_24);
+        }
+        else if(Objects.equals(blog.type, "Mobile")) {
+
+            holder.icon.setImageResource(R.drawable.baseline_phone_android_24);
+        }
+        else {
+            holder.icon.setImageResource(R.drawable.bg);
+        }
         holder.item.setOnClickListener(v -> {
             Intent intent=new Intent(context,TechDetailsActivity.class);
             intent.putExtra("data",new Gson().toJson(blog));
@@ -44,7 +59,7 @@ public class TechAdaptor extends RecyclerView.Adapter<TechViewHolder> {
 
     @Override
     public int getItemCount() {
-        return Math.min(4, techList.size());
+        return techList != null ? Math.min(4, techList.size()) : 0;
 
     }
 }

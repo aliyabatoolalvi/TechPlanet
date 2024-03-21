@@ -1,5 +1,7 @@
 package com.aliya.techplanet;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -12,10 +14,17 @@ import com.aliya.techplanet.databinding.ActivityTechDetailsBinding;
 
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
+import android.view.View;
+
+
 
 public class TechDetailsActivity extends AppCompatActivity {
-    Tech tech;
+    Tech tech= new Tech();
+    Context context;
+    TechAdaptor adapter;
     ActivityTechDetailsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +45,20 @@ public class TechDetailsActivity extends AppCompatActivity {
         binding.specs.setText(tech.getSpecs());
         binding.price.setText(String.valueOf(tech.getPrice()));
 
+        binding.buy.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v){
+                tech.is_sold = true;
+                tech.status = "Sold";
+                if (Objects.equals(tech.getStatus(), "sold"))
+                    tech.setSoldat(new SimpleDateFormat("yyyy-MM-dd HH:mm a").format(new Date()));
+                AppDatabase.getDatabase(context).techDao().update(tech);
+                adapter.notifyDataSetChanged();
+
+            }});
+
     }
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -48,4 +70,5 @@ public class TechDetailsActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }
