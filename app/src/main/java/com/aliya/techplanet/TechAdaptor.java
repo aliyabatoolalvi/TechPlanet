@@ -59,7 +59,7 @@ public class TechAdaptor extends RecyclerView.Adapter<TechViewHolder> {
 
     @Override
     public int getItemCount() {
-        return techList != null ? Math.min(4, techList.size()) : 0;
+        return techList != null ? techList.size() : 0;
 
     }
 }

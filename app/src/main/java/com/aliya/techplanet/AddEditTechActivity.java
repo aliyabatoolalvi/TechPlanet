@@ -28,9 +28,6 @@ public class AddEditTechActivity extends AppCompatActivity {
 
     ActivityAddEditTechBinding binding;
     Tech tech = new Tech();
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
